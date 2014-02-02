@@ -34,4 +34,4 @@ This application can be downloaded in two formats. You can download either the A
  6. Find OpenInTerminal.app and drag it into the Finder toolbar (For OSX Mavericks - Press ⌘ and then perform drag operation)
 
 ### Usage:
-Using this application is very simple. Just browse to the file/folder or select multiple files/folders in Finder and then click on this application's icon that we had moved into the Finder toolbar. 
+Using this application is very simple. Just browse to the file/folder or select multiple files/folders in Finder and then click on this application's icon present in your Finder's toolbar. 
