@@ -2,9 +2,19 @@
 ==============
 
 ### Description:
-Finder toolbar application to open a selected folder / multiple selected folders in terminal.
+Finder toolbar application to open selected directory/directories in Terminal.
+ * Works without a problem with folder names containing spaces
+ * Works with multiple selections
+   * Single file selected - opens parent directory of the selected file in Terminal window
+   * Multiple files selected - opens parent directory of each selected file in multiple Terminal windows
+   * Single directory selected - opens selected directory in Terminal window
+   * Multiple directories selected - opens each selected directory in multiple Terminal windows
+ * Fast, efficient and easy to use
 
-### Installation Instructions:
+Created By: Nitin Madhok
+https://github.com/nmadhok/OpenInTerminal
+
+### Installation: 
 This application can be downloaded in two formats. You can download either the Apple Disk Image(.dmg) or the Zipped Archive(.zip). Please refer to the instructions below for the format you choose to download:
 
 ##### Apple Disk Image (.dmg)
@@ -22,3 +32,6 @@ This application can be downloaded in two formats. You can download either the A
  4. Browse to the extracted folder and then copy OpenInTerminal.app to your Applications folder
  5. Browse to your Applications folder from the sidebar or Press ⌘ + ⇧ + I on your Keyboard
  6. Find OpenInTerminal.app and drag it into the Finder toolbar (For OSX Mavericks - Press ⌘ and then perform drag operation)
+
+### Usage:
+Using this application is very simple. Just browse to the file/folder or select multiple files/folders in Finder and then click on this application's icon that we had moved into the Finder toolbar. 
