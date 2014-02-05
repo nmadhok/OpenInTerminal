@@ -18,7 +18,7 @@ https://github.com/nmadhok/OpenInTerminal
 This application can be downloaded in two formats. You can download either the Apple Disk Image(.dmg) or the Zipped Archive(.zip). Please refer to the instructions below for the format you choose to download:
 
 ##### Apple Disk Image (.dmg)
- 1. Download [OpenInTerminal.dmg](http://)
+ 1. Download [OpenInTerminal.dmg](https://github.com/nmadhok/OpenInTerminal/releases/latest)
  2. Double click on the downloaded DMG file
  3. Drag OpenInTerminal.app to the Applications folder
  4. Open a new Finder Window
@@ -26,7 +26,7 @@ This application can be downloaded in two formats. You can download either the A
  6. Find OpenInTerminal.app and drag it into the Finder toolbar
 
 ##### Zipped Archive (.zip)
- 1. Download [OpenInTerminal.zip](http://)
+ 1. Download [OpenInTerminal.zip](https://github.com/nmadhok/OpenInTerminal/releases/latest)
  2. Double click on the downloaded archive to extract it
  3. Open a new finder window 
  4. Browse to the extracted folder and then copy OpenInTerminal.app to your Applications folder
