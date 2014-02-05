@@ -64,13 +64,13 @@
 				<key>Class Name</key>
 				<string>AMGetSelectedFinderItemsAction</string>
 				<key>InputUUID</key>
-				<string>E5C02B9C-8839-408A-A65A-0EE918924504</string>
+				<string>DFB8172E-906D-4451-A29C-64C877E520C3</string>
 				<key>Keywords</key>
 				<array/>
 				<key>OutputUUID</key>
-				<string>541AC8CF-91B6-4EE5-A4E5-6B33A735060C</string>
+				<string>98BF249B-A3A9-449A-954E-5D24650CE68B</string>
 				<key>UUID</key>
-				<string>1CEDDCC8-1F9F-495F-95E2-CE8D3F78C8D2</string>
+				<string>CF8F4DBE-8B40-4D0D-9F44-BEB33F61069E</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -78,284 +78,6 @@
 				<key>arguments</key>
 				<dict/>
 			</dict>
-		</dict>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<false/>
-					<key>Types</key>
-					<array>
-						<string>com.apple.applescript.alias-object</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.0</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict/>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.applescript.alias-object</string>
-					</array>
-				</dict>
-				<key>AMRequiredResources</key>
-				<array/>
-				<key>ActionBundlePath</key>
-				<string>/Library/Automator/NYHTPROD-Dispense Items Incrementally.action</string>
-				<key>ActionName</key>
-				<string>Dispense Items Incrementally</string>
-				<key>ActionParameters</key>
-				<dict/>
-				<key>BundleIdentifier</key>
-				<string>com.NyhthawkProductions.Automator.DispenseItemsIncrementally</string>
-				<key>CFBundleVersion</key>
-				<string>1.0</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
-				<key>CanShowWhenRun</key>
-				<false/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryFilesAndFolders</string>
-				</array>
-				<key>Class Name</key>
-				<string>AMAppleScriptAction</string>
-				<key>InputUUID</key>
-				<string>6F5DDE45-777D-4FB1-89B7-D49CB3586A38</string>
-				<key>Keywords</key>
-				<array/>
-				<key>OutputUUID</key>
-				<string>56D8A656-727B-4ECA-87D0-27059A58D965</string>
-				<key>UUID</key>
-				<string>CABCB396-826E-4BE9-9378-657E8976B49E</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>arguments</key>
-				<dict/>
-				<key>conversionLabel</key>
-				<integer>0</integer>
-				<key>nibPath</key>
-				<string>/Library/Automator/NYHTPROD-Dispense Items Incrementally.action/Contents/Resources/English.lproj/main.nib</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<true/>
-					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.path</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.0</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>abbrPOSIXPath</key>
-					<dict/>
-					<key>basicURL</key>
-					<dict/>
-					<key>delimiterIndex</key>
-					<dict/>
-					<key>encloseCharIndex</key>
-					<dict/>
-					<key>enclosedPath</key>
-					<dict/>
-					<key>escapedPOSIXPath</key>
-					<dict/>
-					<key>kind</key>
-					<dict/>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.string</string>
-					</array>
-				</dict>
-				<key>AMRequiredResources</key>
-				<array/>
-				<key>ActionBundlePath</key>
-				<string>/Users/nitinmadhok/Library/Automator/Get File Path.action</string>
-				<key>ActionName</key>
-				<string>Get File Path</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>abbrPOSIXPath</key>
-					<false/>
-					<key>basicURL</key>
-					<false/>
-					<key>delimiterIndex</key>
-					<integer>0</integer>
-					<key>encloseCharIndex</key>
-					<integer>1</integer>
-					<key>enclosedPath</key>
-					<false/>
-					<key>escapedPOSIXPath</key>
-					<false/>
-					<key>kind</key>
-					<integer>0</integer>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>jp.ne.wind.miko.Automator.GetFilePathAMA</string>
-				<key>CFBundleVersion</key>
-				<string>1.0</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<true/>
-				<key>CanShowWhenRun</key>
-				<true/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryFilesAndFolders</string>
-				</array>
-				<key>Class Name</key>
-				<string>GetFilePathAction</string>
-				<key>InputUUID</key>
-				<string>11DE5C1A-A63D-496D-842F-B8E389880236</string>
-				<key>Keywords</key>
-				<array>
-					<string>Get</string>
-					<string>Path</string>
-					<string>POSIX</string>
-					<string>HFS</string>
-					<string>URL</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>A7D4591A-B01C-44E5-9C79-6CC0AF5659A3</string>
-				<key>UUID</key>
-				<string>0081A748-9DE4-490F-B82E-EFBE103A92AB</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>escapedPOSIXPath</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-					<key>1</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>basicURL</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>1</string>
-					</dict>
-					<key>2</key>
-					<dict>
-						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>encloseCharIndex</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>2</string>
-					</dict>
-					<key>3</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>abbrPOSIXPath</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>3</string>
-					</dict>
-					<key>4</key>
-					<dict>
-						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>kind</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>4</string>
-					</dict>
-					<key>5</key>
-					<dict>
-						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>delimiterIndex</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>5</string>
-					</dict>
-					<key>6</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>enclosedPath</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>6</string>
-					</dict>
-				</dict>
-				<key>isViewVisible</key>
-				<true/>
-				<key>location</key>
-				<string>442.000000:857.000000</string>
-				<key>nibPath</key>
-				<string>/Users/nitinmadhok/Library/Automator/Get File Path.action/Contents/Resources/English.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -406,17 +128,16 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string># # # # # # # # # # # # # # # # # #
-#   Author Name: Nitin Madhok   # #
-# # # # # # # # # # # # # # # # # #
-
-if [ -d "$1" ]
-then
-  pathname=$1
-else
-  pathname=$(dirname "$1")
-fi
-open -a Terminal "$pathname"</string>
+					<string>for f in "$@"
+do
+	if [ -d "$f" ]
+	then
+  		pathname=$f
+	else
+  		pathname=$(dirname "$f")
+	fi
+	echo "$pathname"
+done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -441,7 +162,7 @@ open -a Terminal "$pathname"</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>E3E81A7B-8EAD-406A-8494-E5D650908962</string>
+				<string>EF3CF007-8523-4A4A-86ED-8FAF7639FDC0</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -451,11 +172,9 @@ open -a Terminal "$pathname"</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>55DFD131-3A2B-4C22-9249-6D760108F4EF</string>
-				<key>ShowWhenRun</key>
-				<false/>
+				<string>DC8C12D0-BD61-4833-B550-3F4726912976</string>
 				<key>UUID</key>
-				<string>90B5240D-C7FE-40E1-A02F-384CB5FF2EBA</string>
+				<string>F8F1E068-57F9-4B95-AADC-E183C9F55530</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -531,7 +250,7 @@ open -a Terminal "$pathname"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>442.000000:512.000000</string>
+				<string>449.500000:449.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -546,28 +265,27 @@ open -a Terminal "$pathname"</string>
 					<key>Container</key>
 					<string>List</string>
 					<key>Optional</key>
-					<true/>
+					<false/>
 					<key>Types</key>
 					<array>
-						<string>*</string>
+						<string>com.apple.cocoa.path</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>1.0.2</string>
+				<string>1.1.1</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Automator</string>
+					<string>Finder</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
-					<key>inputToUse</key>
-					<dict/>
-					<key>loopMode</key>
-					<dict/>
-					<key>loopUnit</key>
-					<dict/>
-					<key>loopValue</key>
-					<dict/>
+					<key>appPath</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<true/>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
 				</dict>
 				<key>AMProvides</key>
 				<dict>
@@ -575,115 +293,70 @@ open -a Terminal "$pathname"</string>
 					<string>List</string>
 					<key>Types</key>
 					<array>
-						<string>*</string>
+						<string>com.apple.cocoa.path</string>
 					</array>
 				</dict>
-				<key>AMRequiredResources</key>
-				<array/>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Loop.action</string>
+				<string>/System/Library/Automator/Open Finder Items.action</string>
 				<key>ActionName</key>
-				<string>Loop</string>
+				<string>Open Finder Items</string>
 				<key>ActionParameters</key>
 				<dict>
-					<key>inputToUse</key>
-					<integer>0</integer>
-					<key>loopMode</key>
-					<integer>1</integer>
-					<key>loopUnit</key>
-					<integer>1</integer>
-					<key>loopValue</key>
-					<integer>1</integer>
+					<key>appPath</key>
+					<string>/Applications/Utilities/Terminal.app</string>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.Loop</string>
+				<string>com.apple.Automator.OpenFinderItems</string>
 				<key>CFBundleVersion</key>
-				<string>1.0.2</string>
+				<string>1.1.1</string>
 				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
+				<true/>
 				<key>CanShowWhenRun</key>
-				<false/>
+				<true/>
 				<key>Category</key>
 				<array>
-					<string>AMCategoryUtilities</string>
+					<string>AMCategoryFilesAndFolders</string>
 				</array>
 				<key>Class Name</key>
-				<string>Loop</string>
+				<string>AMOpenFinderItems</string>
 				<key>InputUUID</key>
-				<string>620671F9-B362-4B9D-9597-6A0E6B94011F</string>
+				<string>C77BEC4B-BB38-4AB9-9A18-031ABD7285A3</string>
 				<key>Keywords</key>
-				<array/>
+				<array>
+					<string>Open</string>
+					<string>Document</string>
+					<string>File</string>
+				</array>
 				<key>OutputUUID</key>
-				<string>93D642DA-4809-4434-B8BF-A77736AD5B7F</string>
+				<string>C3FEB59A-D648-40E9-B05F-C3523F6B8EA0</string>
 				<key>UUID</key>
-				<string>739E499B-6813-4967-9A9D-D396F3D8370C</string>
+				<string>768EA9B9-66E1-4320-AD88-E5ACF0BF779D</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Automator</string>
+					<string>Finder</string>
 				</array>
 				<key>arguments</key>
 				<dict>
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<integer>0</integer>
+						<string></string>
 						<key>name</key>
-						<string>loopMode</string>
+						<string>appPath</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>
 						<key>uuid</key>
 						<string>0</string>
-					</dict>
-					<key>1</key>
-					<dict>
-						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>loopValue</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>1</string>
-					</dict>
-					<key>2</key>
-					<dict>
-						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>inputToUse</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>2</string>
-					</dict>
-					<key>3</key>
-					<dict>
-						<key>default value</key>
-						<integer>1</integer>
-						<key>name</key>
-						<string>loopUnit</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>3</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>442.000000:149.000000</string>
+				<string>449.500000:266.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Loop.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/Open Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -691,72 +364,21 @@ open -a Terminal "$pathname"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0D93B984-EAC8-4F41-A4DD-F856DE5837BF</key>
+		<key>9A6E9B99-3BDF-4510-90D4-1EF8532D2A23</key>
 		<dict>
 			<key>from</key>
-			<string>90B5240D-C7FE-40E1-A02F-384CB5FF2EBA - 90B5240D-C7FE-40E1-A02F-384CB5FF2EBA</string>
+			<string>F8F1E068-57F9-4B95-AADC-E183C9F55530 - F8F1E068-57F9-4B95-AADC-E183C9F55530</string>
 			<key>to</key>
-			<string>739E499B-6813-4967-9A9D-D396F3D8370C - 739E499B-6813-4967-9A9D-D396F3D8370C</string>
+			<string>768EA9B9-66E1-4320-AD88-E5ACF0BF779D - 768EA9B9-66E1-4320-AD88-E5ACF0BF779D</string>
 		</dict>
-		<key>1661A652-0C14-4E09-A81E-030E7F1DADA9</key>
+		<key>C73DD820-2DD5-4D21-8CF6-CAE29FA46215</key>
 		<dict>
 			<key>from</key>
-			<string>CABCB396-826E-4BE9-9378-657E8976B49E - CABCB396-826E-4BE9-9378-657E8976B49E</string>
+			<string>CF8F4DBE-8B40-4D0D-9F44-BEB33F61069E - CF8F4DBE-8B40-4D0D-9F44-BEB33F61069E</string>
 			<key>to</key>
-			<string>0081A748-9DE4-490F-B82E-EFBE103A92AB - 0081A748-9DE4-490F-B82E-EFBE103A92AB</string>
-		</dict>
-		<key>231E34D7-C839-4486-B904-3818068A2AA3</key>
-		<dict>
-			<key>from</key>
-			<string>0081A748-9DE4-490F-B82E-EFBE103A92AB - 0081A748-9DE4-490F-B82E-EFBE103A92AB</string>
-			<key>to</key>
-			<string>90B5240D-C7FE-40E1-A02F-384CB5FF2EBA - 90B5240D-C7FE-40E1-A02F-384CB5FF2EBA</string>
-		</dict>
-		<key>EB4E1113-01C9-4393-AE36-2B1D145565F8</key>
-		<dict>
-			<key>from</key>
-			<string>1CEDDCC8-1F9F-495F-95E2-CE8D3F78C8D2 - 1CEDDCC8-1F9F-495F-95E2-CE8D3F78C8D2</string>
-			<key>to</key>
-			<string>CABCB396-826E-4BE9-9378-657E8976B49E - CABCB396-826E-4BE9-9378-657E8976B49E</string>
+			<string>F8F1E068-57F9-4B95-AADC-E183C9F55530 - F8F1E068-57F9-4B95-AADC-E183C9F55530</string>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<array>
-		<dict>
-			<key>UUID</key>
-			<string>4132BE9A-0C87-4D1C-98AC-C3167CCE3C57</string>
-			<key>identifier</key>
-			<string>com.apple.Automator.Variable.Path</string>
-			<key>name</key>
-			<string>Path</string>
-			<key>value</key>
-			<string>~/Desktop</string>
-		</dict>
-		<dict>
-			<key>UUID</key>
-			<string>0E730909-0231-4D8C-B34D-9D10E7F35CA2</string>
-			<key>identifier</key>
-			<string>com.apple.Automator.Variable.Storage</string>
-			<key>name</key>
-			<string>Selected-Finder-Item</string>
-		</dict>
-		<dict>
-			<key>UUID</key>
-			<string>5C3423AF-1C25-4E67-B79B-8F6D0F887572</string>
-			<key>identifier</key>
-			<string>com.apple.Automator.Variable.Storage</string>
-			<key>name</key>
-			<string>Unescaped-Plain-Path</string>
-		</dict>
-		<dict>
-			<key>UUID</key>
-			<string>703A9E3B-8E9E-4D3C-8D4F-99E10A50C000</string>
-			<key>identifier</key>
-			<string>com.apple.Automator.Variable.Storage</string>
-			<key>name</key>
-			<string>Escaped-Path</string>
-		</dict>
-	</array>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>workflowTypeIdentifier</key>
