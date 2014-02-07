@@ -4,6 +4,7 @@
 ### Description:
 Finder toolbar application to open selected directory/directories in Terminal.
  * Works without a problem with folder names containing spaces
+ * Works with Finder Sidebar Items as well
  * Works with multiple selections
    * Single file selected - opens parent directory of the selected file in Terminal window
    * Multiple files selected - opens parent directory of each selected file in multiple Terminal windows
