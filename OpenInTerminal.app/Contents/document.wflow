@@ -21,63 +21,96 @@
 					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
+						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>2.1.1</string>
+				<string>1.0.2</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Finder</string>
+					<string>Automator</string>
 				</array>
 				<key>AMParameterProperties</key>
-				<dict/>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
 				<key>AMProvides</key>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
+						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
-				<key>AMRequiredResources</key>
-				<array/>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Get Selected Finder Items 2.action</string>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
 				<key>ActionName</key>
-				<string>Get Selected Finder Items</string>
+				<string>Run AppleScript</string>
 				<key>ActionParameters</key>
-				<dict/>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	tell application "Finder"		set sel to (get selection)		if not sel = {} then -- selection is a file/folder or multiple files/folders			set FileList to selection as alias list			return FileList		else -- selection is not a file or folder and is a finder sidebar item			set FileList to ((folder of the front window) as text)			if (FileList is equal to "") then				return FileList			else				return POSIX path of FileList			end if		end if	end tellend run</string>
+				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.Get_Selected_Finder_Items_2</string>
+				<string>com.apple.Automator.RunScript</string>
 				<key>CFBundleVersion</key>
-				<string>2.1.1</string>
+				<string>1.0.2</string>
 				<key>CanShowSelectedItemsWhenRun</key>
 				<false/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
 				<array>
-					<string>AMCategoryFilesAndFolders</string>
+					<string>AMCategoryUtilities</string>
 				</array>
 				<key>Class Name</key>
-				<string>AMGetSelectedFinderItemsAction</string>
+				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>DFB8172E-906D-4451-A29C-64C877E520C3</string>
+				<string>4D3459F1-B9F1-473A-903F-A86EB4962801</string>
 				<key>Keywords</key>
-				<array/>
+				<array>
+					<string>Run</string>
+				</array>
 				<key>OutputUUID</key>
-				<string>98BF249B-A3A9-449A-954E-5D24650CE68B</string>
+				<string>04034AFD-96F6-469B-AFCC-99A935BD5D12</string>
 				<key>UUID</key>
-				<string>CF8F4DBE-8B40-4D0D-9F44-BEB33F61069E</string>
+				<string>6AF06D17-BE62-4529-A299-D4BA7E166FDB</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Finder</string>
+					<string>Automator</string>
 				</array>
 				<key>arguments</key>
-				<dict/>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>442.000000:979.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
+			<key>isViewVisible</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -128,16 +161,26 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>for f in "$@"
-do
-	if [ -d "$f" ]
-	then
-  		pathname=$f
-	else
-  		pathname=$(dirname "$f")
-	fi
-	echo "$pathname"
-done</string>
+					<string>if [ -z "$1" ] || [ "$1" = "/" ]
+then
+	osascript &lt;&lt;-EOF
+	tell application "Terminal"
+    	activate
+    	do script ""
+	end tell
+	EOF
+else
+	for f in "$@"
+	do
+		if [ -d "$f" ]
+		then
+  			pathname=$f
+		else
+  			pathname=$(dirname "$f")
+		fi
+		echo "$pathname"
+	done
+fi</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -162,7 +205,7 @@ done</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>EF3CF007-8523-4A4A-86ED-8FAF7639FDC0</string>
+				<string>4EF6BDCB-F08F-4381-8499-6B7929AAC999</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -172,9 +215,9 @@ done</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>DC8C12D0-BD61-4833-B550-3F4726912976</string>
+				<string>1EAB413A-9652-4EAE-ABAD-6350885E3A7B</string>
 				<key>UUID</key>
-				<string>F8F1E068-57F9-4B95-AADC-E183C9F55530</string>
+				<string>21733AB0-F3BA-4580-B8A8-AC3638EDDF2E</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -250,7 +293,7 @@ done</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.500000:449.000000</string>
+				<string>442.000000:486.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -320,7 +363,7 @@ done</string>
 				<key>Class Name</key>
 				<string>AMOpenFinderItems</string>
 				<key>InputUUID</key>
-				<string>C77BEC4B-BB38-4AB9-9A18-031ABD7285A3</string>
+				<string>E3EA3FDF-74F0-4B6C-B697-B01321255086</string>
 				<key>Keywords</key>
 				<array>
 					<string>Open</string>
@@ -328,9 +371,9 @@ done</string>
 					<string>File</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>C3FEB59A-D648-40E9-B05F-C3523F6B8EA0</string>
+				<string>D2240DF2-3BF9-4100-A1A6-BF573A66F7B8</string>
 				<key>UUID</key>
-				<string>768EA9B9-66E1-4320-AD88-E5ACF0BF779D</string>
+				<string>6B301918-D019-473F-BC1B-72ECF8274D9F</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -354,7 +397,7 @@ done</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.500000:266.000000</string>
+				<string>442.000000:123.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Open Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -364,19 +407,19 @@ done</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>9A6E9B99-3BDF-4510-90D4-1EF8532D2A23</key>
+		<key>35E887EB-6FB5-4F5C-A67C-CCDBC7D3F4CE</key>
 		<dict>
 			<key>from</key>
-			<string>F8F1E068-57F9-4B95-AADC-E183C9F55530 - F8F1E068-57F9-4B95-AADC-E183C9F55530</string>
+			<string>21733AB0-F3BA-4580-B8A8-AC3638EDDF2E - 21733AB0-F3BA-4580-B8A8-AC3638EDDF2E</string>
 			<key>to</key>
-			<string>768EA9B9-66E1-4320-AD88-E5ACF0BF779D - 768EA9B9-66E1-4320-AD88-E5ACF0BF779D</string>
+			<string>6B301918-D019-473F-BC1B-72ECF8274D9F - 6B301918-D019-473F-BC1B-72ECF8274D9F</string>
 		</dict>
-		<key>C73DD820-2DD5-4D21-8CF6-CAE29FA46215</key>
+		<key>FB90199A-D341-4D52-8BAA-36D2C4DDBAE4</key>
 		<dict>
 			<key>from</key>
-			<string>CF8F4DBE-8B40-4D0D-9F44-BEB33F61069E - CF8F4DBE-8B40-4D0D-9F44-BEB33F61069E</string>
+			<string>6AF06D17-BE62-4529-A299-D4BA7E166FDB - 6AF06D17-BE62-4529-A299-D4BA7E166FDB</string>
 			<key>to</key>
-			<string>F8F1E068-57F9-4B95-AADC-E183C9F55530 - F8F1E068-57F9-4B95-AADC-E183C9F55530</string>
+			<string>21733AB0-F3BA-4580-B8A8-AC3638EDDF2E - 21733AB0-F3BA-4580-B8A8-AC3638EDDF2E</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
