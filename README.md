@@ -24,7 +24,7 @@ This application can be downloaded in two formats. You can download either the A
  3. Drag OpenInTerminal.app to the Applications folder
  4. Open a new Finder Window
  5. Browse to your Applications folder from the sidebar or Press ⌘ + ⇧ + I on your Keyboard
- 6. Find OpenInTerminal.app and drag it into the Finder toolbar
+ 6. Find OpenInTerminal.app and drag it into the Finder toolbar (For OSX Mavericks - Press ⌘ and then perform drag operation)
 
 ##### Zipped Archive (.zip)
  1. Download [OpenInTerminal.zip](https://github.com/nmadhok/OpenInTerminal/releases/latest)
@@ -33,6 +33,8 @@ This application can be downloaded in two formats. You can download either the A
  4. Browse to the extracted folder and then copy OpenInTerminal.app to your Applications folder
  5. Browse to your Applications folder from the sidebar or Press ⌘ + ⇧ + I on your Keyboard
  6. Find OpenInTerminal.app and drag it into the Finder toolbar (For OSX Mavericks - Press ⌘ and then perform drag operation)
+
+<img src="https://raw.github.com/nmadhok/OpenInTerminal/master/.images/add-to-finder-toolbar.gif"/>
 
 ### Usage:
 Using this application is very simple. Just browse to the file/folder or select multiple files/folders in Finder and then click on this application's icon present in your Finder's toolbar. 
