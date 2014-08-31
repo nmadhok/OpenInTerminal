@@ -13,7 +13,7 @@ Finder toolbar application to open selected directory/directories in Terminal.
  * Fast, efficient and easy to use
 
 Created By: Nitin Madhok
-https://github.com/nmadhok/OpenInTerminal
+https://github.com/nmadhok/
 
 ### Installation: 
 This application can be downloaded in two formats. You can download either the Apple Disk Image(.dmg) or the Zipped Archive(.zip). Please refer to the instructions below for the format you choose to download:
