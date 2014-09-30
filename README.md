@@ -2,15 +2,15 @@
 ==============
 
 ### Description:
-Finder toolbar application to open selected directory/directories in Terminal.
+Finder toolbar application to open selected directory/directories in Terminal/iTerm2.
  * Works without a problem with folder names containing spaces
  * Works with Finder Sidebar Items as well
  * Works with Aliases
  * Works with multiple selections
-   * Single file selected - opens parent directory of the selected file in Terminal window
-   * Multiple files selected - opens parent directory of each selected file in multiple Terminal windows
-   * Single directory selected - opens selected directory in Terminal window
-   * Multiple directories selected - opens each selected directory in multiple Terminal windows
+   * Single file selected - opens parent directory of the selected file in Terminal window or iTerm tab
+   * Multiple files selected - opens parent directory of each selected file in multiple Terminal windows or iTerm tabs
+   * Single directory selected - opens selected directory in Terminal window or iTerm tab
+   * Multiple directories selected - opens each selected directory in multiple Terminal windows or iTerm tabs
  * Fast, efficient and easy to use
 
 Created By: Nitin Madhok
