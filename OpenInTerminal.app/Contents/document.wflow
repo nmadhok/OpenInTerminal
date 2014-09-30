@@ -18,6 +18,123 @@
 					<key>Container</key>
 					<string>List</string>
 					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Set Value of Variable</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>temporary items path</key>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/56F7AB74-BA5E-4315-94DA-72953593C4DF/1/com.apple.Automator.Set_Value_of_Variable</string>
+					<key>variableUUID</key>
+					<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Set_Value_of_Variable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Set_Value_of_Variable</string>
+				<key>InputUUID</key>
+				<string>E5C8D214-B927-48B9-AF79-D037161EEFF8</string>
+				<key>Keywords</key>
+				<array>
+					<string>variable</string>
+					<string>binding</string>
+					<string>input</string>
+					<string>output</string>
+					<string>storage</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>22E05D47-3C8A-4B61-A091-ACE342203EBB</string>
+				<key>UUID</key>
+				<string>DCD5A233-913C-4D7E-A082-4B3DFFF7F2FD</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>529.500000:1115.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
 					<true/>
 					<key>Types</key>
 					<array>
@@ -51,7 +168,14 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "Finder"		set sel to (get selection)		set PathList to {}		if not sel = {} then -- selection is a file/folder or multiple files/folders			set FileList to selection as alias list			repeat with FileName in FileList				if kind of FileName is "folder" or kind of FileName is "alias" or kind of FileName is "application" then					set PathName to POSIX path of FileName as string				else					set PathName to POSIX path of (parent of (FileName) as string)				end if				set end of the PathList to PathName			end repeat			return PathList		else -- selection is not a file or folder and is a finder sidebar item			set FileList to ((folder of the front window) as text)			if FileList is equal to "" or POSIX path of FileList is equal to "/" then				set HFSpathHome to home as string				return POSIX path of HFSpathHome			else				return POSIX path of FileList			end if		end if	end tell	tell application "Terminal"		activate	end tellend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		set plistFile to property list file "/Applications/OpenInTerminal.app/Contents/Info.plist"		tell plistFile			tell contents				try					set OpenInTerminalDefault to "Terminal"					set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"					if value of property list item "OpenInTerminalDefault" is "" or value of property list item "OpenInTerminalDestinationPath" is "" then						(choose from list {"iTerm2", "Terminal (Default)"} with prompt "Which application you want to use OpenInTerminal with?" with title "OpenInTerminal:")						set choice to result as text						if choice is "iTerm2" then							set OpenInTerminalDefault to "iTerm2"							set OpenInTerminalDestinationPath to "/Applications/iTerm.app"						end if						set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault						set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath					end if				on error					make new property list item at end with properties {kind:string, name:"OpenInTerminalDestinationPath", value:""}					make new property list item at end with properties {kind:string, name:"OpenInTerminalDefault", value:""}					(choose from list {"iTerm2", "Terminal (Default)"} with prompt "Which application you want to use OpenInTerminal with?" with title "OpenInTerminal:")					set choice to result as text					if choice is "iTerm2" then						set OpenInTerminalDefault to "iTerm"						set OpenInTerminalDestinationPath to "/Applications/iTerm.app"					end if					set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault					set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath				end try				set OpenInTerminalDestinationPath to value of property list item "OpenInTerminalDestinationPath"			end tell		end tell	end tell	return OpenInTerminalDestinationPathend run</string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	tell application "System Events"		set plistFile to property list file "/Applications/OpenInTerminal.app/Contents/Info.plist"		tell plistFile			tell contents				try					set OpenInTerminalDefault to "Terminal"					set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"					if value of property list item "OpenInTerminalDefault" is "" or value of property list item "OpenInTerminalDestinationPath" is "" then						(choose from list {"iTerm2", "Terminal (Default)"} with prompt "Which application you want to use OpenInTerminal with?" with title "OpenInTerminal:")						set choice to result as text						if choice is "iTerm2" then							set OpenInTerminalDefault to "iTerm2"							set OpenInTerminalDestinationPath to "/Applications/iTerm.app"						end if						set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault						set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath					end if				on error					make new property list item at end with properties {kind:string, name:"OpenInTerminalDestinationPath", value:""}					make new property list item at end with properties {kind:string, name:"OpenInTerminalDefault", value:""}					(choose from list {"iTerm2", "Terminal (Default)"} with prompt "Which application you want to use OpenInTerminal with?" with title "OpenInTerminal:")					set choice to result as text					if choice is "iTerm2" then						set OpenInTerminalDefault to "iTerm"						set OpenInTerminalDestinationPath to "/Applications/iTerm.app"					end if					set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault					set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath				end try				set OpenInTerminalDestinationPath to value of property list item "OpenInTerminalDestinationPath"			end tell		end tell	end tell	return OpenInTerminalDestinationPathend run</string>
+					<key>temporary items path</key>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/56F7AB74-BA5E-4315-94DA-72953593C4DF/1/com.apple.Automator.RunScript</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -67,6 +191,10 @@
 				</array>
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
+				<key>Disabled</key>
+				<false/>
+				<key>IgnoresInput</key>
+				<true/>
 				<key>InputUUID</key>
 				<string>4D3459F1-B9F1-473A-903F-A86EB4962801</string>
 				<key>Keywords</key>
@@ -105,7 +233,356 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:796.000000</string>
+				<string>529.500000:955.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Set Value of Variable</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>temporary items path</key>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/56F7AB74-BA5E-4315-94DA-72953593C4DF/1/com.apple.Automator.Set_Value_of_Variable</string>
+					<key>variableUUID</key>
+					<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Set_Value_of_Variable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Set_Value_of_Variable</string>
+				<key>Disabled</key>
+				<false/>
+				<key>InputUUID</key>
+				<string>2391AF02-806F-4CB4-8C32-156FF67BE692</string>
+				<key>Keywords</key>
+				<array>
+					<string>variable</string>
+					<string>binding</string>
+					<string>input</string>
+					<string>output</string>
+					<string>storage</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>E445BC86-5381-45E0-9A88-3ED82F779E91</string>
+				<key>UUID</key>
+				<string>A7E13288-B213-490A-BC16-2922828A10ED</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>529.500000:697.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Get Value of Variable</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>temporary items path</key>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/56F7AB74-BA5E-4315-94DA-72953593C4DF/1/com.apple.Automator.Get_Value_of_Variable</string>
+					<key>variableUUID</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Get_Value_of_Variable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Get_Value_of_Variable</string>
+				<key>InputUUID</key>
+				<string>69CC167F-DA65-4316-8F3B-52542D778C65</string>
+				<key>Keywords</key>
+				<array>
+					<string>variable</string>
+					<string>binding</string>
+					<string>input</string>
+					<string>output</string>
+					<string>storage</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>04761FD7-0483-4804-92D0-4C1A552ED926</string>
+				<key>UUID</key>
+				<string>43A0EE20-E2E9-448F-ADD4-4909A9318EBD</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>529.500000:537.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	tell application "Finder"		set sel to (get selection)		set PathList to {}		if not sel = {} then -- selection is a file/folder or multiple files/folders			set FileList to selection as alias list			repeat with FileName in FileList				if kind of FileName is "folder" or kind of FileName is "alias" or kind of FileName is "application" then					set PathName to POSIX path of FileName as string				else					set PathName to POSIX path of (parent of (FileName) as string)				end if				set end of the PathList to PathName			end repeat			return PathList		else -- selection is not a file or folder and is a finder sidebar item			set FileList to ((folder of the front window) as text)			if FileList is equal to "" or POSIX path of FileList is equal to "/" then				set HFSpathHome to home as string				return POSIX path of HFSpathHome			else				return POSIX path of FileList			end if		end if	end tell	tell application OpenInTerminalDefault		activate	end tellend run</string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	tell application "Finder"		set sel to (get selection)		set PathList to {}		if not sel = {} then -- selection is a file/folder or multiple files/folders			set FileList to selection as alias list			repeat with FileName in FileList				if kind of FileName is "folder" or kind of FileName is "alias" or kind of FileName is "application" then					set PathName to POSIX path of FileName as string				else					set PathName to POSIX path of (parent of (FileName) as string)				end if				set end of the PathList to PathName			end repeat			return PathList		else -- selection is not a file or folder and is a finder sidebar item			set FileList to ((folder of the front window) as text)			if FileList is equal to "" or POSIX path of FileList is equal to "/" then				set HFSpathHome to home as string				return POSIX path of HFSpathHome			else				return POSIX path of FileList			end if		end if	end tell	tell application OpenInTerminalDefault		activate	end tellend run</string>
+					<key>temporary items path</key>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/56F7AB74-BA5E-4315-94DA-72953593C4DF/1/com.apple.Automator.RunScript</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>Disabled</key>
+				<false/>
+				<key>InputUUID</key>
+				<string>6E98D8D1-6F45-42A5-9294-1B850D655100</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>77010AC0-20D5-481E-BC99-8FE4E6B50FD5</string>
+				<key>UUID</key>
+				<string>45945DEB-08A6-498E-9075-BE03E082D708</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>529.500000:434.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -127,7 +604,7 @@ end run</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>1.1.1</string>
+				<string>v.1.1.1</string>
 				<key>AMApplication</key>
 				<array>
 					<string>Finder</string>
@@ -138,8 +615,12 @@ end run</string>
 					<dict>
 						<key>isPathPopUp</key>
 						<true/>
+						<key>selectedVariableUUID</key>
+						<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
 						<key>variableUUIDsInMenu</key>
-						<array/>
+						<array>
+							<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
+						</array>
 					</dict>
 				</dict>
 				<key>AMProvides</key>
@@ -158,7 +639,14 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>appPath</key>
+					<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>appPath</key>
 					<string>/Applications/Utilities/Terminal.app</string>
+					<key>temporary items path</key>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/56F7AB74-BA5E-4315-94DA-72953593C4DF/1/com.apple.Automator.OpenFinderItems</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.OpenFinderItems</string>
@@ -211,7 +699,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:303.000000</string>
+				<string>529.500000:121.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Open Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -221,21 +709,61 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>C84395E8-F1C0-4635-930C-544F0477BF72</key>
+		<key>13490863-AC85-4B64-B858-1C887DF61271</key>
+		<dict>
+			<key>from</key>
+			<string>A7E13288-B213-490A-BC16-2922828A10ED - A7E13288-B213-490A-BC16-2922828A10ED</string>
+			<key>to</key>
+			<string>43A0EE20-E2E9-448F-ADD4-4909A9318EBD - 43A0EE20-E2E9-448F-ADD4-4909A9318EBD</string>
+		</dict>
+		<key>96C4ADA2-6735-4C01-A9D9-051173B4D882</key>
 		<dict>
 			<key>from</key>
 			<string>6AF06D17-BE62-4529-A299-D4BA7E166FDB - 6AF06D17-BE62-4529-A299-D4BA7E166FDB</string>
 			<key>to</key>
+			<string>A7E13288-B213-490A-BC16-2922828A10ED - A7E13288-B213-490A-BC16-2922828A10ED</string>
+		</dict>
+		<key>C1EBF000-6AD5-4B19-B2AD-F85B9B54ADD1</key>
+		<dict>
+			<key>from</key>
+			<string>DCD5A233-913C-4D7E-A082-4B3DFFF7F2FD - DCD5A233-913C-4D7E-A082-4B3DFFF7F2FD</string>
+			<key>to</key>
+			<string>6AF06D17-BE62-4529-A299-D4BA7E166FDB - 6AF06D17-BE62-4529-A299-D4BA7E166FDB</string>
+		</dict>
+		<key>DF473DF2-43D8-42CF-8D74-F9169A06B604</key>
+		<dict>
+			<key>from</key>
+			<string>45945DEB-08A6-498E-9075-BE03E082D708 - 45945DEB-08A6-498E-9075-BE03E082D708</string>
+			<key>to</key>
 			<string>6B301918-D019-473F-BC1B-72ECF8274D9F - 6B301918-D019-473F-BC1B-72ECF8274D9F</string>
+		</dict>
+		<key>EF40D001-644D-46D3-AEC0-B7FFE3ED9023</key>
+		<dict>
+			<key>from</key>
+			<string>43A0EE20-E2E9-448F-ADD4-4909A9318EBD - 43A0EE20-E2E9-448F-ADD4-4909A9318EBD</string>
+			<key>to</key>
+			<string>45945DEB-08A6-498E-9075-BE03E082D708 - 45945DEB-08A6-498E-9075-BE03E082D708</string>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<array>
 		<dict>
 			<key>UUID</key>
-			<string>838A4DF2-290B-4A2B-AA4B-D0CCFEB6D928</string>
+			<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
 			<key>identifier</key>
-			<string>com.apple.Automator.Variable.HomeFolder</string>
+			<string>com.apple.Automator.Variable.Path</string>
+			<key>name</key>
+			<string>OpenInTerminalDestinationPath</string>
+			<key>value</key>
+			<string>/Applications/Utilities/Terminal.app</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>Input</string>
 		</dict>
 	</array>
 	<key>workflowMetaData</key>
