@@ -65,7 +65,7 @@
 				<key>ActionRuntimeParameters</key>
 				<dict>
 					<key>temporary items path</key>
-					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/4CE35900-F387-4D32-820D-833D7ABC69BB/1/com.apple.Automator.Set_Value_of_Variable</string>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/FEA1EE39-290F-45A5-B0B1-E684D22C9E6E/1/com.apple.Automator.Set_Value_of_Variable</string>
 					<key>variableUUID</key>
 					<string>1FF640B2-8751-4A00-9509-AF697F95A8DE</string>
 				</dict>
@@ -120,7 +120,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:1420.000000</string>
+				<string>405.000000:1115.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -168,14 +168,14 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "System Events"		set plistFile to property list file "/Applications/OpenInTerminal.app/Contents/Info.plist"		tell plistFile			tell contents				try					set OpenInTerminalDefault to "Terminal"					set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"					if value of property list item "OpenInTerminalDefault" is "" or value of property list item "OpenInTerminalDestinationPath" is "" then						set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)						if choice is "iTerm2" then							set OpenInTerminalDefault to "iTerm2"							set OpenInTerminalDestinationPath to "/Applications/iTerm.app"						end if						set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault						set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath					end if				on error					make new property list item at end with properties {kind:string, name:"OpenInTerminalDestinationPath", value:""}					make new property list item at end with properties {kind:string, name:"OpenInTerminalDefault", value:""}					set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)					if choice is "iTerm2" then						set OpenInTerminalDefault to "iTerm"						set OpenInTerminalDestinationPath to "/Applications/iTerm.app"					end if					set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault					set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath				end try				set OpenInTerminalDestinationPath to value of property list item "OpenInTerminalDestinationPath"			end tell		end tell	end tell	return OpenInTerminalDestinationPathend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		set plistFile to property list file "/Applications/OpenInTerminal.app/Contents/Info.plist"		tell plistFile			tell contents				set OpenInTerminalDefault to "Terminal"				set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"				set choice to "default"				try					if value of property list item "OpenInTerminalDefault" is "" or value of property list item "OpenInTerminalDestinationPath" is "" then						set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)					end if				on error					make new property list item at end with properties {kind:string, name:"OpenInTerminalDestinationPath", value:""}					make new property list item at end with properties {kind:string, name:"OpenInTerminalDefault", value:""}					set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)				end try				if choice is not "default" then					if choice is "iTerm2" then						set OpenInTerminalDefault to "iTerm2"						set OpenInTerminalDestinationPath to "/Applications/iTerm.app"					else if choice is "Terminal" then						set OpenInTerminalDefault to "Terminal"						set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"					end if					set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault					set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath				end if				set OpenInTerminalDestinationPath to value of property list item "OpenInTerminalDestinationPath"			end tell		end tell	end tell	return OpenInTerminalDestinationPathend run</string>
 				</dict>
 				<key>ActionRuntimeParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "System Events"		set plistFile to property list file "/Applications/OpenInTerminal.app/Contents/Info.plist"		tell plistFile			tell contents				try					set OpenInTerminalDefault to "Terminal"					set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"					if value of property list item "OpenInTerminalDefault" is "" or value of property list item "OpenInTerminalDestinationPath" is "" then						set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)						if choice is "iTerm2" then							set OpenInTerminalDefault to "iTerm2"							set OpenInTerminalDestinationPath to "/Applications/iTerm.app"						end if						set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault						set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath					end if				on error					make new property list item at end with properties {kind:string, name:"OpenInTerminalDestinationPath", value:""}					make new property list item at end with properties {kind:string, name:"OpenInTerminalDefault", value:""}					set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)					if choice is "iTerm2" then						set OpenInTerminalDefault to "iTerm"						set OpenInTerminalDestinationPath to "/Applications/iTerm.app"					end if					set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault					set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath				end try				set OpenInTerminalDestinationPath to value of property list item "OpenInTerminalDestinationPath"			end tell		end tell	end tell	return OpenInTerminalDestinationPathend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		set plistFile to property list file "/Applications/OpenInTerminal.app/Contents/Info.plist"		tell plistFile			tell contents				set OpenInTerminalDefault to "Terminal"				set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"				set choice to "default"				try					if value of property list item "OpenInTerminalDefault" is "" or value of property list item "OpenInTerminalDestinationPath" is "" then						set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)					end if				on error					make new property list item at end with properties {kind:string, name:"OpenInTerminalDestinationPath", value:""}					make new property list item at end with properties {kind:string, name:"OpenInTerminalDefault", value:""}					set choice to the button returned of (display dialog "Which application you want to use OpenInTerminal with?" buttons {"iTerm2", "Terminal"} default button 2)				end try				if choice is not "default" then					if choice is "iTerm2" then						set OpenInTerminalDefault to "iTerm2"						set OpenInTerminalDestinationPath to "/Applications/iTerm.app"					else if choice is "Terminal" then						set OpenInTerminalDefault to "Terminal"						set OpenInTerminalDestinationPath to "/Applications/Utilities/Terminal.app"					end if					set value of property list item "OpenInTerminalDefault" to OpenInTerminalDefault					set value of property list item "OpenInTerminalDestinationPath" to OpenInTerminalDestinationPath				end if				set OpenInTerminalDestinationPath to value of property list item "OpenInTerminalDestinationPath"			end tell		end tell	end tell	return OpenInTerminalDestinationPathend run</string>
 					<key>temporary items path</key>
-					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/4CE35900-F387-4D32-820D-833D7ABC69BB/1/com.apple.Automator.RunScript</string>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/FEA1EE39-290F-45A5-B0B1-E684D22C9E6E/1/com.apple.Automator.RunScript</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -233,7 +233,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:1136.000000</string>
+				<string>405.000000:955.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -295,7 +295,7 @@ end run</string>
 				<key>ActionRuntimeParameters</key>
 				<dict>
 					<key>temporary items path</key>
-					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/4CE35900-F387-4D32-820D-833D7ABC69BB/1/com.apple.Automator.Set_Value_of_Variable</string>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/FEA1EE39-290F-45A5-B0B1-E684D22C9E6E/1/com.apple.Automator.Set_Value_of_Variable</string>
 					<key>variableUUID</key>
 					<string>32F59789-8F2B-435B-81CC-7D59DFC22650</string>
 				</dict>
@@ -352,7 +352,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:643.000000</string>
+				<string>405.000000:697.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -416,7 +416,7 @@ end run</string>
 				<key>ActionRuntimeParameters</key>
 				<dict>
 					<key>temporary items path</key>
-					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/4CE35900-F387-4D32-820D-833D7ABC69BB/1/com.apple.Automator.Get_Value_of_Variable</string>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/FEA1EE39-290F-45A5-B0B1-E684D22C9E6E/1/com.apple.Automator.Get_Value_of_Variable</string>
 					<key>variableUUID</key>
 					<string></string>
 				</dict>
@@ -471,7 +471,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:539.000000</string>
+				<string>405.000000:537.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -526,7 +526,7 @@ end run</string>
 					<key>source</key>
 					<string>on run {input, parameters}	tell application "Finder"		set sel to (get selection)		set PathList to {}		if not sel = {} then -- selection is a file/folder or multiple files/folders			set FileList to selection as alias list			repeat with FileName in FileList				if kind of FileName is "folder" or kind of FileName is "alias" or kind of FileName is "application" then					set PathName to POSIX path of FileName as string				else					set PathName to POSIX path of (parent of (FileName) as string)				end if				set end of the PathList to PathName			end repeat			return PathList		else -- selection is not a file or folder and is a finder sidebar item			set FileList to ((folder of the front window) as text)			if FileList is equal to "" or POSIX path of FileList is equal to "/" then				set HFSpathHome to home as string				return POSIX path of HFSpathHome			else				return POSIX path of FileList			end if		end if	end tell	tell application OpenInTerminalDefault		activate	end tellend run</string>
 					<key>temporary items path</key>
-					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/4CE35900-F387-4D32-820D-833D7ABC69BB/1/com.apple.Automator.RunScript</string>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/FEA1EE39-290F-45A5-B0B1-E684D22C9E6E/1/com.apple.Automator.RunScript</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -582,7 +582,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:436.000000</string>
+				<string>405.000000:434.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -646,7 +646,7 @@ end run</string>
 					<key>appPath</key>
 					<string>/Applications/Utilities/Terminal.app</string>
 					<key>temporary items path</key>
-					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/4CE35900-F387-4D32-820D-833D7ABC69BB/1/com.apple.Automator.OpenFinderItems</string>
+					<string>/var/folders/pq/2j2r0znj3m79p7n2yhcx3lpm0000gn/T/FEA1EE39-290F-45A5-B0B1-E684D22C9E6E/1/com.apple.Automator.OpenFinderItems</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.OpenFinderItems</string>
@@ -699,7 +699,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.500000:123.000000</string>
+				<string>405.000000:121.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Open Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -709,35 +709,35 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0EF2720F-1B40-48FE-8AE6-9B14277C99C9</key>
+		<key>60628035-DC9D-45C5-922D-EB165267F380</key>
+		<dict>
+			<key>from</key>
+			<string>A7E13288-B213-490A-BC16-2922828A10ED - A7E13288-B213-490A-BC16-2922828A10ED</string>
+			<key>to</key>
+			<string>43A0EE20-E2E9-448F-ADD4-4909A9318EBD - 43A0EE20-E2E9-448F-ADD4-4909A9318EBD</string>
+		</dict>
+		<key>80A9143A-A579-40E4-BF18-B03C6C385DB4</key>
 		<dict>
 			<key>from</key>
 			<string>6AF06D17-BE62-4529-A299-D4BA7E166FDB - 6AF06D17-BE62-4529-A299-D4BA7E166FDB</string>
 			<key>to</key>
 			<string>A7E13288-B213-490A-BC16-2922828A10ED - A7E13288-B213-490A-BC16-2922828A10ED</string>
 		</dict>
-		<key>3BB9767B-7189-4583-8526-A33732517C47</key>
-		<dict>
-			<key>from</key>
-			<string>43A0EE20-E2E9-448F-ADD4-4909A9318EBD - 43A0EE20-E2E9-448F-ADD4-4909A9318EBD</string>
-			<key>to</key>
-			<string>45945DEB-08A6-498E-9075-BE03E082D708 - 45945DEB-08A6-498E-9075-BE03E082D708</string>
-		</dict>
-		<key>4525AD55-CDDD-4B19-BA24-C905AD75BE8B</key>
+		<key>A9C454CC-BBDF-4BDC-94AF-DA2EBDCEAC44</key>
 		<dict>
 			<key>from</key>
 			<string>DCD5A233-913C-4D7E-A082-4B3DFFF7F2FD - DCD5A233-913C-4D7E-A082-4B3DFFF7F2FD</string>
 			<key>to</key>
 			<string>6AF06D17-BE62-4529-A299-D4BA7E166FDB - 6AF06D17-BE62-4529-A299-D4BA7E166FDB</string>
 		</dict>
-		<key>B20B08F4-2D07-4F3A-8C0B-D8EB8CAFC524</key>
+		<key>B81D1D47-65AB-434F-B757-155F999E9CCB</key>
 		<dict>
 			<key>from</key>
-			<string>A7E13288-B213-490A-BC16-2922828A10ED - A7E13288-B213-490A-BC16-2922828A10ED</string>
-			<key>to</key>
 			<string>43A0EE20-E2E9-448F-ADD4-4909A9318EBD - 43A0EE20-E2E9-448F-ADD4-4909A9318EBD</string>
+			<key>to</key>
+			<string>45945DEB-08A6-498E-9075-BE03E082D708 - 45945DEB-08A6-498E-9075-BE03E082D708</string>
 		</dict>
-		<key>D5BECA56-9330-4117-9716-F8A4962AFDC8</key>
+		<key>F1156229-5125-4DF9-978E-79D0F13D5760</key>
 		<dict>
 			<key>from</key>
 			<string>45945DEB-08A6-498E-9075-BE03E082D708 - 45945DEB-08A6-498E-9075-BE03E082D708</string>
