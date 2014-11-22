@@ -1,5 +1,6 @@
 <img src="https://raw.github.com/nmadhok/OpenInTerminal/master/.images/Icon.png" height="94px" width="94px" valign="bottom"/> OpenInTerminal
 ==============
+[![tip for next commit](http://prime4commit.com/projects/125.svg)](http://prime4commit.com/projects/125)
 
 ### Description:
 Finder toolbar application to open selected directory/directories in Terminal/iTerm2.
