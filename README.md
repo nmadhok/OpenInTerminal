@@ -52,5 +52,5 @@ Then, follow these steps:
  5. Click Open in the dialog box. If prompted, enter your administrator name and password
 
 ### Author:
-Name: [Nitin Madhok](https://github.com/nmadhok/)
+Name: [Nitin Madhok](https://github.com/nmadhok/)  
 Email: [nmadhok@clemson.edu](mailto:nmadhok@clemson.edu?subject=Regarding OpenInTerminal GitHub Project)
