@@ -14,8 +14,7 @@ Finder toolbar application to open selected directory/directories in Terminal/iT
    * Multiple directories selected - opens each selected directory in multiple Terminal windows or iTerm tabs
  * Fast, efficient and easy to use
 
-Created By: Nitin Madhok
-https://github.com/nmadhok/
+Created By: [Nitin Madhok](https://github.com/nmadhok/)
 
 ### Installation: 
 This application can be downloaded in two formats. You can download either the Apple Disk Image(.dmg) or the Zipped Archive(.zip). Please refer to the instructions below for the format you choose to download:
@@ -51,3 +50,7 @@ Then, follow these steps:
  3. Find OpenInTerminal.app and Control-click or right click on the icon
  4. Select Open from the top of contextual menu that appears
  5. Click Open in the dialog box. If prompted, enter your administrator name and password
+
+### Author:
+Name: [Nitin Madhok](https://github.com/nmadhok/)
+Email: [nmadhok@clemson.edu](mailto:nmadhok@clemson.edu?subject=Regarding OpenInTerminal GitHub Project)
